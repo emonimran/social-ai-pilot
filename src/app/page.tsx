@@ -25,36 +25,13 @@ export default function Home() {
 
   // If user is authenticated, redirect to dashboard
   if (user) {
+    // Redirect to dashboard page
+    window.location.href = '/dashboard';
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-        {/* Header for authenticated users */}
-        <header className="container mx-auto px-6 py-6">
-          <nav className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Sparkles className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">Social AI Pilot</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-600">Welcome, {user.email}</span>
-              <Button variant="outline" size="sm" onClick={logout}>
-                Sign Out
-              </Button>
-            </div>
-          </nav>
-        </header>
-
-        {/* Dashboard content */}
-        <div className="container mx-auto px-6 py-12">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Welcome to your Social AI Pilot Dashboard!
-            </h1>
-            <p className="text-lg text-gray-600">
-              Your AI-powered social media management platform is ready. Start creating amazing content!
-            </p>
-          </div>
-          
-          <ContentGenerator />
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Redirecting to dashboard...</p>
         </div>
       </div>
     );
